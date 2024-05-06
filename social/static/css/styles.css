@@ -1,0 +1,45 @@
+.scroll-wrapper {
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Keeps cards in a single line */
+    padding-bottom: 1rem; /* Adds padding below the cards */
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.scroll-container {
+    display: inline-flex; /* Ensures cards align horizontally */
+    gap: 1rem; /* Space between cards */
+}
+
+.card {
+    flex: 0 0 auto; /* Prevents card resizing */
+    width: 200px; /* Fixed width for cards */
+    scroll-snap-align: start; /* Aligns card to start of the scrolling container */
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensures image doesn't overflow card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for card */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.card-img-top {
+    width: 100%; /* Ensures image fits the card */
+    height: 150px; /* Fixed height for images */
+    object-fit: cover; /* Ensures images maintain their aspect ratio */
+}
+
+.card-body {
+    text-align: center;
+    padding: 0.5rem; /* Padding inside the card body */
+}
+
+.card-title {
+    font-size: 1em; /* Font size adjustment */
+    margin-top: 0.5rem; /* Adds margin on top */
+}
+
+h1 {
+    margin-bottom: 1rem; /* Adds margin below the title */
+}

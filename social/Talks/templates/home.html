@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <center><h1>Talks!</h1></center>
+    
+    {% for talk in talks %}
+        <div class="card">
+        <div class="card-header">
+          {{talk.user}}
+        </div>
+        <div class="card-body">
+          <p class="card-text">{{talk.body}}</p>
+          <p>{{talk.created_at}}</p>
+        </div>
+      </div> <br>
+    {% endfor %}
+    <br> <center>
+    <p>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+          Share a Thought!
+        </button>
+      </p>
+      <div style="min-height: 120px;">
+        <div class="collapse collapse-horizontal" id="collapseWidthExample">
+            {% if form %}
+            <form method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-secondary">Submit</button>
+              </form>
+            {% endif %}
+        </div>
+      </div>
+    </center>
+{% endblock %}
